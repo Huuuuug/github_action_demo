@@ -63,7 +63,6 @@ jobs:
       # 同步提交
       - name: Push changes to main branch
         if: steps.version-check.outcome == 'success'
-        # 引用第三方任务以实现push操作
         uses: ad-m/github-push-action@master
         with:
           branch: main
