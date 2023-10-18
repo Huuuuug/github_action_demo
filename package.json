@@ -1,5 +1,6 @@
 {
   "name": "github_action_demo",
+  "packageManager": "pnpm@7.18.1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
