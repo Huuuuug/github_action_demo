@@ -58,7 +58,7 @@ jobs:
         if: steps.version-check.outcome == 'success'
         run: |
           # 执行更新版本号
-          node updateVersion.js
+          node updateVersion.ts
 
       # 同步提交
       - name: Push changes to main branch
