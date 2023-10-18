@@ -4,7 +4,7 @@ import path from 'path'
 
 async function autoUpdateVersion() {
   // 读取 package.json 文件
-  const PKG_PATH = path.resolve(__dirname, 'package.json')
+  const PKG_PATH = path.resolve(__dirname, '../package.json')
   try {
     const data = await readFile(PKG_PATH, { encoding: 'utf-8' })
     const pkg = JSON.parse(data) // 更新版本号
