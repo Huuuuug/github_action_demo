@@ -17,10 +17,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 # 工作流由一个或多个作业组成，这些作业可以顺序运行，也可以并行运行
 jobs:
-  # This workflow contains a single job called "build"
-  # 作业运行的系统环境（运行时环境）
   build:
-    # The type of runner that the job will run on
+    # 作业运行的系统环境（运行时环境）
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -49,11 +47,11 @@ jobs:
           # 检查提交信息是否包含 [AutoUpdateVersion]，主要用于防止发生任务死循环
           # 如果最新提交时更新版本号，则无需再触发任务，直接退出
           if [[ $latest_commit_message == *"[AutoUpdateVersion]"* ]]; then
-          echo "Skip version update as it was triggered by an automated commit"
+            echo "Skip version update as it was triggered by an automated commit"
             exit 78
           else
             echo "Version update is needed"
-            fi
+          fi
 
       # 更新版本号并提交
       - name: Update version and commit changes
